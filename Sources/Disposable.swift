@@ -185,6 +185,7 @@ public final class CompositeDisposable: Disposable {
 	///
 	/// - returns: An instance of `DisposableHandle` that can be used to
 	///            opaquely remove the disposable later (if desired).
+	@discardableResult
 	public func add(_ action: @escaping () -> Void) -> DisposableHandle {
 		return add(ActionDisposable(action: action))
 	}
@@ -227,7 +228,7 @@ extension ScopedDisposable where InnerDisposable: AnyDisposable {
 	///   - disposable: A disposable to dispose of when deinitializing, which
 	///                 will be wrapped in an `AnyDisposable`.
 	public convenience init(_ disposable: Disposable) {
-		self.init(AnyDisposable(disposable))
+		self.init(InnerDisposable(disposable))
 	}
 }
 
