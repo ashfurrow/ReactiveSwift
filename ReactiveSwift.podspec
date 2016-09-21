@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "2.0"
   s.tvos.deployment_target = "9.0"
   # Right now this points to a commit, but eventually it will be a git tag instead. That tag will be something like `:tag => "v#{s.version}"`, generating v0.0.1 for example.
-  s.source       = { :git => "https://github.com/ReactiveCocoa/ReactiveSwift.git", :commit => "d4de1ff81c12124d148f726b8b44dd6887b41ae0" }
+  s.source       = { :git => "https://github.com/ReactiveCocoa/ReactiveSwift.git", :branch => 'master' }
   # Directory glob for all Swift files
   s.source_files  = "Sources/*.{swift}"
   s.dependency 'Result', '~> 3.0'
